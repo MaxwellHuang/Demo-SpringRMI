@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/tool http://www.springframework.org/schema/tool/spring-tool.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <context:annotation-config/>
+    <context:component-scan base-package="com.maxwell"/>
+
+    <bean id="accountService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <property name="serviceUrl" value="rmi://localhost:1199/AccountService"/>
+        <property name="serviceInterface" value="com.maxwell.common.AccountServiceInterface"/>
+    </bean>
+
+    <bean name="simpleObject" class="com.maxwell.service.SimpleObject">
+        <property name="account" ref="accountService"/>
+    </bean>
+
+</beans>
