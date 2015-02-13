@@ -9,20 +9,17 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>Remote</module>
-        <module>Local</module>
+        <module>RMI</module>
+        <module>Hessian</module>
+        <module>HttpInvokers</module>
         <module>Common</module>
     </modules>
 
+    <properties>
+        <spring.version>3.2.5.RELEASE</spring.version>
+    </properties>
+
     <repositories>
-        <repository>
-            <id>localRepository</id>
-            <name>localRepository</name>
-            <url>http://192.168.56.102:8081/nexus/content/groups/public/</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
         <repository>
             <id>oschina</id>
             <name>oschina Repository</name>
@@ -53,24 +50,5 @@
             <url>http://192.168.56.102:8081/nexus/content/repositories/releases</url>
         </repository>
     </distributionManagement>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-core</artifactId>
-            <version>3.2.5.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-            <version>3.2.5.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
-            <version>3.2.5.RELEASE</version>
-        </dependency>
-    </dependencies>
-
 
 </project>

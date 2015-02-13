@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/lang"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang.xsd">
+    <context:defaults/>
+    <bean name="accountExporter" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+        <property name="service" ref="accountService"/>
+        <property name="serviceInterface" value="com.maxwell.common.AccountServiceInterface"/>
+    </bean>
+
+    <bean name="/AccountService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+        <property name="service" ref="accountService"/>
+        <property name="serviceInterface" value="com.maxwell.common.AccountServiceInterface"/>
+    </bean>
+
+    <bean id="accountService" class="com.maxwell.invoker.AccountServiceImp"/>
+
+</beans>

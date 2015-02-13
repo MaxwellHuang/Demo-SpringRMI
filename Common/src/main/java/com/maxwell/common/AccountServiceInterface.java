@@ -7,5 +7,5 @@ package com.maxwell.common;
  */
 public interface AccountServiceInterface {
 
-    public String getUserName();
+    public String doSomthing();
 }
